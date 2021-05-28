@@ -1,11 +1,12 @@
 import React from 'react'
 
-export default function Button( { counter, setCounter}) {
+export default function Button( props) {
 
-    const handleClick = () => setCounter(counter + 1);
+    const handleClick = () => props.onClickFunction(props.increment)
+
     return (
-        <button onClick={ () => handleClick() }>
-            {counter}
+        <button onClick={ handleClick }>
+            +{props.increment}
         </button>
     )
 }

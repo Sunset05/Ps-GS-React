@@ -6,10 +6,17 @@ export default function App() {
 
   const [counter, setCounter] = useState(0);
 
+  const incrementCounter = (number) => {
+    setCounter(counter + number)  
+}
+
   return (
-    <div>
-      <Button counter = {counter} setCounter={setCounter}/>
-      <Display />
-    </div>
+    <>
+      <Button onClickFunction={incrementCounter} increment={1}/>
+      <Button onClickFunction={incrementCounter} increment={5}/>
+      <Button onClickFunction={incrementCounter} increment={10}/>
+      <Button onClickFunction={incrementCounter} increment={100}/>
+      <Display message={counter}/>
+    </>
   )
 }
